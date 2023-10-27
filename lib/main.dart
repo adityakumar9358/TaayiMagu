@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:haem_suraksha/screens/caretaker_screen.dart';
+import 'package:haem_suraksha/screens/complaint_screen.dart';
+import 'package:haem_suraksha/screens/faq_screen.dart';
 import 'screens/splash_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  MainApp({super.key});
+  final ThemeData theme = ThemeData(
+    useMaterial3: true,
+    fontFamily: 'Raleway',
+    brightness: Brightness.light,
+    colorSchemeSeed: Colors.lightBlue,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +25,14 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Taayi Magu',
       themeMode: ThemeMode.system,
-      theme: ThemeData(
-        useMaterial3: true,
-        fontFamily: 'Raleway',
-        brightness: Brightness.light,
-        colorSchemeSeed: Colors.lightBlue,
-      ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        fontFamily: 'Raleway',
-        colorSchemeSeed: Colors.lightBlue,
-        brightness: Brightness.dark,
-      ),
+      theme: theme,
       home: SplashScreen(),
       routes: {
         '/login': (context) => LoginScreen(),
+        '/caretaker': (context) => CareTakerScreen(),
         '/home': (context) => HomeScreen(),
+        '/complaints': (context) => ComplaintScreen(),
+        '/faq': (context) => FAQScreen(),
       },
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../utils/helper_functions.dart';
 import '../widgets/button_container.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,26 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    String _message = "";
-    DateTime now = DateTime.now();
-    String _currentHour = DateFormat('kk').format(now);
-    int hour = int.parse(_currentHour);
-
-    setState(
-      () {
-        if (hour >= 5 && hour < 12) {
-          _message = 'Good Morning';
-        } else if (hour >= 12 && hour <= 17) {
-          _message = 'Good Afternoon';
-        } else {
-          _message = 'Good Evening';
-        }
-      },
-    );
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sulalitha Arike",
+          "Sulalitha Aaraike",
           style: theme.textTheme.headlineMedium,
           textAlign: TextAlign.left,
         ),
@@ -66,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: theme.textTheme.titleMedium,
                     ),
                     Text(
-                      _message,
+                      HelperFunctions.getGreeting(),
                       style: theme.textTheme.titleSmall,
                     ),
                   ],
@@ -111,12 +95,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.deepPurple),
                   ButtonContainer(
                       icon: Icons.woman, text: 'Profile', color: Colors.green),
-                  ButtonContainer(
-                      icon: Icons.comment,
-                      text: 'Complaints',
-                      color: Colors.orange),
-                  ButtonContainer(
-                      icon: Icons.help, text: 'FAQ', color: Colors.blue),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/complaints');
+                    },
+                    child: ButtonContainer(
+                        icon: Icons.comment,
+                        text: 'Complaints',
+                        color: Colors.orange),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/faq');
+                    },
+                    child: ButtonContainer(
+                        icon: Icons.help, text: 'FAQ', color: Colors.blue),
+                  ),
                 ],
               ),
             ),

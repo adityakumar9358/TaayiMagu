@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
               SizedBox(height: 200),
               Image.asset('images/logo.png', width: 300),
               SizedBox(height: 50),
-              Text("Sulalitha Arike",
+              Text("Sulalitha Aaraike",
                   style: TextStyle(fontSize: 32), textAlign: TextAlign.left),
               Text(
                 "Your Journey, Our Care",
