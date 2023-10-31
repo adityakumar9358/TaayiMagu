@@ -22,6 +22,8 @@ Future<void> _makePhoneCall(Uri url) async {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  var _textFieldController;
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -89,12 +91,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 children: <Widget>[
-                  ButtonContainer(
-                      icon: Icons.emergency,
-                      text: 'Emergency',
-                      color: Colors.deepPurple),
-                  ButtonContainer(
-                      icon: Icons.woman, text: 'Profile', color: Colors.green),
+                  GestureDetector(
+                    onTap: () {
+                      _displayTextInputDialog(context);
+                    },
+                    child: ButtonContainer(
+                        icon: Icons.emergency,
+                        text: 'Emergency',
+                        color: Colors.deepPurple),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/profile');
+                    },
+                    child: ButtonContainer(
+                        icon: Icons.woman,
+                        text: 'Profile',
+                        color: Colors.green),
+                  ),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/complaints');
@@ -176,5 +190,37 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> _displayTextInputDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('In case of Emergency'),
+            content: TextField(
+              onChanged: (value) {
+                setState(() {
+                  //valueText = value;
+                });
+              },
+              controller: _textFieldController,
+              decoration: InputDecoration(hintText: "Enter Year of Birth"),
+            ),
+            actions: <Widget>[
+              MaterialButton(
+                color: Colors.green,
+                textColor: Colors.white,
+                child: Text('OK'),
+                onPressed: () {
+                  setState(() {
+                    //codeDialog = valueText;
+                    Navigator.pop(context);
+                  });
+                },
+              ),
+            ],
+          );
+        });
   }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:haem_suraksha/screens/caretaker_screen.dart';
 import 'package:haem_suraksha/screens/complaint_screen.dart';
 import 'package:haem_suraksha/screens/faq_screen.dart';
+import 'package:haem_suraksha/screens/profile_screen.dart';
+import 'screens/list_screen.dart';
 import 'screens/splash_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
@@ -33,6 +35,8 @@ class MainApp extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/complaints': (context) => ComplaintScreen(),
         '/faq': (context) => FAQScreen(),
+        '/profile': (context) => ProfileScreen(),
+        '/list': (context) => ListScreen(),
       },
     );
   }

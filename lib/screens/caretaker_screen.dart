@@ -95,10 +95,15 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 children: <Widget>[
-                  ButtonContainer(
-                      icon: Icons.view_list,
-                      text: 'List of All Patients',
-                      color: Colors.deepPurple),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/list');
+                    },
+                    child: ButtonContainer(
+                        icon: Icons.view_list,
+                        text: 'List of All Patients',
+                        color: Colors.deepPurple),
+                  ),
                   ButtonContainer(
                       icon: Icons.alarm, text: 'Warning', color: Colors.green),
                   ButtonContainer(
