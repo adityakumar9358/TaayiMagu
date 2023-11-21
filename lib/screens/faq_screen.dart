@@ -11,14 +11,14 @@ class FAQScreen extends StatefulWidget {
 class _FAQScreen extends State<FAQScreen> {
   final questions = [
     {
-      'question': 'Are there any foods I should avoid during pregnancy?',
+      'question': 'ಗರ್ಭಾವಸ್ಥೆಯಲ್ಲಿ ನಾನು ಸೇವಿಸಬಾರದ ಯಾವುದೇ ಆಹಾರಗಳಿವೆಯೇ?',
       'answer':
-          'There are wonderful resources online that cover healthy eating (visit Nutrition During Pregnancy, for one). What it boils down to is this: You dont want to eat something that might contain bacteria that could make you sick. Pregnant women are more likely to get very sick from bacteria in food, which can be dangerous for you and your pregnancy.  Risky foods include raw or undercooked meat, fish, and eggs. To avoid problems, cook food thoroughly and wash your hands, knives, and cutting boards after handling raw meat or fish. Avoid homemade mayonnaise and dressings that use raw eggs. Cook scrambled eggs thoroughly.  Avoid raw sprouts, including bean and alfalfa. The moist conditions they are grown in are ideal for bacteria growth. Don’t eat unpasteurized (raw) milk and cheeses, such as some feta, queso fresco, and blue cheeses. Deli meats and hot dogs should be thoroughly cooked or microwaved to kill any bacteria.Cooked seafood is a good source of omega-3 fatty acids, an important nutrient for your pregnancy. But certain fish should be avoided because they have high levels of mercury. Do not eat bigeye tuna, king mackerel, marlin, orange roughy, shark, swordfish, or tilefish. Limit white (albacore) tuna to 6 ounces or less a week. Here is a list with safer options. Also, fish caught in local rivers or lakes can be unsafe because of chemicals in the water. In my area, for example, there is mercury runoff from old gold mines. It is best to avoid eating fish caught locally unless you can check local safety information. Otherwise, eat no more than 6 ounces of it and avoid eating other fish that week.'
+          'ನೀವು ಅನಾರೋಗ್ಯಕ್ಕೆ ಕಾರಣವಾಗುವ ಬ್ಯಾಕ್ಟೀರಿಯಾವನ್ನು ಹೊಂದಿರುವ ಯಾವುದನ್ನಾದರೂ ತಿನ್ನಲು ಬಯಸುವುದಿಲ್ಲ. ಗರ್ಭಿಣಿಯರು ಆಹಾರದಲ್ಲಿನ ಬ್ಯಾಕ್ಟೀರಿಯಾದಿಂದ ತುಂಬಾ ಅನಾರೋಗ್ಯಕ್ಕೆ ಒಳಗಾಗುವ ಸಾಧ್ಯತೆಯಿದೆ, ಇದು ನಿಮಗೆ ಮತ್ತು ನಿಮ್ಮ ಗರ್ಭಧಾರಣೆಗೆ ಅಪಾಯಕಾರಿ. ಅಪಾಯಕಾರಿ ಆಹಾರಗಳಲ್ಲಿ ಕಚ್ಚಾ ಅಥವಾ ಬೇಯಿಸದ ಮಾಂಸ, ಮೀನು ಮತ್ತು ಮೊಟ್ಟೆಗಳು ಸೇರಿವೆ. ಸಮಸ್ಯೆಗಳನ್ನು ತಪ್ಪಿಸಲು, ಆಹಾರವನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಬೇಯಿಸಿ ಮತ್ತು ಹಸಿ ಮಾಂಸ ಅಥವಾ ಮೀನುಗಳನ್ನು ನಿರ್ವಹಿಸಿದ ನಂತರ ನಿಮ್ಮ ಕೈಗಳು, ಚಾಕುಗಳು ಮತ್ತು ಕತ್ತರಿಸುವ ಬೋರ್ಡ್‌ಗಳನ್ನು ತೊಳೆಯಿರಿ. ಮನೆಯಲ್ಲಿ ತಯಾರಿಸಿದ ಮೇಯನೇಸ್ ಮತ್ತು ಹಸಿ ಮೊಟ್ಟೆಗಳನ್ನು ಬಳಸುವ ಡ್ರೆಸ್ಸಿಂಗ್ ಅನ್ನು ತಪ್ಪಿಸಿ. ಬೇಯಿಸಿದ ಮೊಟ್ಟೆಗಳನ್ನು ಚೆನ್ನಾಗಿ ಬೇಯಿಸಿ. ಹುರುಳಿ ಮತ್ತು ಅಲ್ಫಾಲ್ಫಾ ಸೇರಿದಂತೆ ಕಚ್ಚಾ ಮೊಗ್ಗುಗಳನ್ನು ತಪ್ಪಿಸಿ. ಅವರು ಬೆಳೆದ ತೇವಾಂಶದ ಪರಿಸ್ಥಿತಿಗಳು ಬ್ಯಾಕ್ಟೀರಿಯಾದ ಬೆಳವಣಿಗೆಗೆ ಸೂಕ್ತವಾಗಿದೆ. ಕೆಲವು ಫೆಟಾ, ಕ್ವೆಸೊ ಫ್ರೆಸ್ಕೊ ಮತ್ತು ನೀಲಿ ಚೀಸ್‌ಗಳಂತಹ ಪಾಶ್ಚರೀಕರಿಸದ (ಕಚ್ಚಾ) ಹಾಲು ಮತ್ತು ಚೀಸ್‌ಗಳನ್ನು ತಿನ್ನಬೇಡಿ. ಯಾವುದೇ ಬ್ಯಾಕ್ಟೀರಿಯಾವನ್ನು ಕೊಲ್ಲಲು ಡೆಲಿ ಮಾಂಸಗಳು ಮತ್ತು ಹಾಟ್ ಡಾಗ್‌ಗಳನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಬೇಯಿಸಬೇಕು ಅಥವಾ ಮೈಕ್ರೊವೇವ್ ಮಾಡಬೇಕು. ಬೇಯಿಸಿದ ಸಮುದ್ರಾಹಾರವು ಒಮೆಗಾ-3 ಕೊಬ್ಬಿನಾಮ್ಲಗಳ ಉತ್ತಮ ಮೂಲವಾಗಿದೆ, ನಿಮ್ಮ ಗರ್ಭಧಾರಣೆಗೆ ಪ್ರಮುಖ ಪೋಷಕಾಂಶವಾಗಿದೆ. ಆದರೆ ಕೆಲವು ಮೀನುಗಳನ್ನು ತಪ್ಪಿಸಬೇಕು ಏಕೆಂದರೆ ಅವುಗಳು ಹೆಚ್ಚಿನ ಮಟ್ಟದ ಪಾದರಸವನ್ನು ಹೊಂದಿರುತ್ತವೆ. ಬಿಗೇಯ್ ಟ್ಯೂನ, ಕಿಂಗ್ ಮ್ಯಾಕೆರೆಲ್, ಮಾರ್ಲಿನ್, ಕಿತ್ತಳೆ ರಫ್, ಶಾರ್ಕ್, ಕತ್ತಿಮೀನು, ಅಥವಾ ಟೈಲ್ ಫಿಶ್ ಅನ್ನು ತಿನ್ನಬೇಡಿ. ವಾರಕ್ಕೆ 6 ಔನ್ಸ್ ಅಥವಾ ಅದಕ್ಕಿಂತ ಕಡಿಮೆ ಬಿಳಿ (ಅಲ್ಬಾಕೋರ್) ಟ್ಯೂನ ಮೀನುಗಳನ್ನು ಮಿತಿಗೊಳಿಸಿ. ಸುರಕ್ಷಿತ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಪಟ್ಟಿ ಇಲ್ಲಿದೆ. ಅಲ್ಲದೆ, ಸ್ಥಳೀಯ ನದಿಗಳು ಅಥವಾ ಸರೋವರಗಳಲ್ಲಿ ಹಿಡಿದ ಮೀನುಗಳು ನೀರಿನಲ್ಲಿ ರಾಸಾಯನಿಕಗಳಿಂದ ಅಸುರಕ್ಷಿತವಾಗಬಹುದು. ನನ್ನ ಪ್ರದೇಶದಲ್ಲಿ, ಉದಾಹರಣೆಗೆ, ಹಳೆಯ ಚಿನ್ನದ ಗಣಿಗಳಿಂದ ಪಾದರಸದ ಹರಿವು ಇದೆ. ನೀವು ಸ್ಥಳೀಯ ಸುರಕ್ಷತಾ ಮಾಹಿತಿಯನ್ನು ಪರಿಶೀಲಿಸದ ಹೊರತು ಸ್ಥಳೀಯವಾಗಿ ಹಿಡಿದ ಮೀನುಗಳನ್ನು ತಿನ್ನುವುದನ್ನು ತಪ್ಪಿಸುವುದು ಉತ್ತಮ. ಇಲ್ಲದಿದ್ದರೆ, ಅದರಲ್ಲಿ 6 ಔನ್ಸ್‌ಗಳಿಗಿಂತ ಹೆಚ್ಚು ತಿನ್ನಬೇಡಿ ಮತ್ತು ಆ ವಾರ ಇತರ ಮೀನುಗಳನ್ನು ತಿನ್ನುವುದನ್ನು ತಪ್ಪಿಸಿ.'
     },
     {
-      'question': 'Can I keep drinking coffee?',
+      'question': 'ನಾನು ಕಾಫಿ ಕುಡಿಯುವುದನ್ನು ಮುಂದುವರಿಸಬಹುದೇ?',
       'answer':
-          'There has been research on whether caffeine increases the risk of miscarriage or preterm birth, but the results are unclear. Most experts agree it is safe to drink about one cup of coffee a day—that is 12 ounces (200 milligrams) of caffeine. Pay attention to tea, chocolate, soft drinks, and other caffeine sources when you are calculating how much you are taking in.'
+          'ಕೆಫೀನ್ ಗರ್ಭಪಾತ ಅಥವಾ ಅಕಾಲಿಕ ಜನನದ ಅಪಾಯವನ್ನು ಹೆಚ್ಚಿಸುತ್ತದೆಯೇ ಎಂಬುದರ ಕುರಿತು ಸಂಶೋಧನೆ ನಡೆದಿದೆ, ಆದರೆ ಫಲಿತಾಂಶಗಳು ಸ್ಪಷ್ಟವಾಗಿಲ್ಲ. ದಿನಕ್ಕೆ ಒಂದು ಕಪ್ ಕಾಫಿ ಕುಡಿಯುವುದು ಸುರಕ್ಷಿತ ಎಂದು ಹೆಚ್ಚಿನ ತಜ್ಞರು ಒಪ್ಪುತ್ತಾರೆ - ಅಂದರೆ 12 ಔನ್ಸ್ (200 ಮಿಲಿಗ್ರಾಂ) ಕೆಫೀನ್. ನೀವು ಎಷ್ಟು ಸೇವಿಸುತ್ತಿದ್ದೀರಿ ಎಂದು ಲೆಕ್ಕಾಚಾರ ಮಾಡುವಾಗ ಚಹಾ, ಚಾಕೊಲೇಟ್, ತಂಪು ಪಾನೀಯಗಳು ಮತ್ತು ಇತರ ಕೆಫೀನ್ ಮೂಲಗಳಿಗೆ ಗಮನ ಕೊಡಿ.'
     },
   ];
   @override
@@ -27,7 +27,7 @@ class _FAQScreen extends State<FAQScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sulalitha Aaraike",
+          "ಪ್ರಶ್ನೆಗಳು",
           style: theme.textTheme.headlineMedium,
           textAlign: TextAlign.left,
         ),

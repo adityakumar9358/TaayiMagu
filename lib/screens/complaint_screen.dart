@@ -15,7 +15,7 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sulalitha Aaraiyke",
+          "ದೂರುಗಳು",
           style: theme.textTheme.headlineMedium,
           textAlign: TextAlign.left,
         ),
@@ -33,7 +33,7 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Hello Sumathi",
+                      "ನಮಸ್ಕಾರ ಸುಮತಿ",
                       style: theme.textTheme.titleMedium,
                     ),
                     Text(
@@ -60,8 +60,8 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
               child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Name',
-                    hintText: 'Enter your Name'),
+                    labelText: 'ಘಟನೆ ವಿಭಾಗ',
+                    hintText: 'ಘಟನೆ ವಿಭಾಗ ಆಯ್ಕೆಮಾಡಿ'),
               ),
             ),
             Padding(
@@ -77,8 +77,8 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
                   expands: true, // <-- SEE HERE
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Complaint',
-                      hintText: 'Enter your Complaint'),
+                      labelText: 'ಘಟನೆಯ ವಿವರ',
+                      hintText: 'ನಿಮ್ಮ ದೂರನ್ನು ನಮೂದಿಸಿ'),
                 ),
               ),
             ),
@@ -94,7 +94,7 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
                   Navigator.pushNamed(context, '/home');
                 },
                 child: Text(
-                  'Submit',
+                  'ಸಲ್ಲಿಸು',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

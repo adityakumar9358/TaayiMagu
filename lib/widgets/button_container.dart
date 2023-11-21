@@ -23,6 +23,7 @@ class ButtonContainer extends StatelessWidget {
           SizedBox(height: 8.0),
           Text(
             text,
+            textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 16.0,
                 color: Colors.white,

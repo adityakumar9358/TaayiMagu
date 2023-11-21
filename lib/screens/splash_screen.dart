@@ -16,10 +16,10 @@ class SplashScreen extends StatelessWidget {
               SizedBox(height: 200),
               Image.asset('images/logo.png', width: 300),
               SizedBox(height: 50),
-              Text("Sulalitha Aaraike",
+              Text("ಸುಲಲಿತ ಆರೈಕೆ",
                   style: TextStyle(fontSize: 32), textAlign: TextAlign.left),
               Text(
-                "Your Journey, Our Care",
+                "ನಿಮ್ಮ ಪ್ರಯಾಣ, ನಮ್ಮ ಕಾಳಜಿ",
                 style: TextStyle(fontSize: 18),
               ),
               SizedBox(height: 25),
@@ -31,7 +31,7 @@ class SplashScreen extends StatelessWidget {
                   Navigator.pushNamed(context, '/login');
                 },
                 child: Text(
-                  'Get Started',
+                  'ಪ್ರಾರಂಭಿಸಿ',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

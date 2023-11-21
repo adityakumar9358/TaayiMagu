@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../utils/helper_functions.dart';
 import '../widgets/button_container.dart';
 
 class CareTakerScreen extends StatefulWidget {
@@ -16,25 +17,11 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     String _message = "";
-    DateTime now = DateTime.now();
-    String _currentHour = DateFormat('kk').format(now);
-    int hour = int.parse(_currentHour);
 
-    setState(
-      () {
-        if (hour >= 5 && hour < 12) {
-          _message = 'Good Morning';
-        } else if (hour >= 12 && hour <= 17) {
-          _message = 'Good Afternoon';
-        } else {
-          _message = 'Good Evening';
-        }
-      },
-    );
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sulalitha Aaraiyke",
+          "ಸುಲಲಿತ ಆರೈಕೆ",
           style: theme.textTheme.headlineMedium,
           textAlign: TextAlign.left,
         ),
@@ -52,11 +39,11 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Care Taker",
+                      "ಆಶಾ ಕಾರ್ಯಕರ್ತೆ",
                       style: theme.textTheme.titleMedium,
                     ),
                     Text(
-                      _message,
+                      HelperFunctions.getGreeting(),
                       style: theme.textTheme.titleSmall,
                     ),
                   ],
@@ -80,7 +67,7 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                'Mrs Sumathi has missed her PHC visit due on 16th October 2023 ',
+                'ಶ್ರೀಮತಿ ಸುಮತಿ ಅವರು 16ನೇ ಅಕ್ಟೋಬರ್ 2023 ರಂದು ತಮ್ಮ PHC ಭೇಟಿಯನ್ನು ತಪ್ಪಿಸಿಕೊಂಡಿದ್ದಾರೆ',
                 style: theme.textTheme.bodyMedium
                     ?.copyWith(fontWeight: FontWeight.bold),
                 textAlign: TextAlign.justify,
@@ -101,18 +88,20 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                     },
                     child: ButtonContainer(
                         icon: Icons.view_list,
-                        text: 'List of All Patients',
+                        text: 'ನಿರೀಕ್ಷಿತ ತಾಯಂದಿರು',
                         color: Colors.deepPurple),
                   ),
                   ButtonContainer(
-                      icon: Icons.alarm, text: 'Warning', color: Colors.green),
+                      icon: Icons.alarm,
+                      text: 'ಎಚ್ಚರಿಕೆಗಳು',
+                      color: Colors.green),
                   ButtonContainer(
                       icon: Icons.online_prediction,
-                      text: 'High Risk RHID',
+                      text: 'ಅಪಾಯದ RHID',
                       color: Colors.orange),
                   ButtonContainer(
                       icon: Icons.help,
-                      text: 'Migrants RHID',
+                      text: 'ವಲಸಿಗರ RHID',
                       color: Colors.blue),
                 ],
               ),

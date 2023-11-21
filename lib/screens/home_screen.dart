@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sulalitha Aaraike",
+          "ಸುಲಲಿತ ಆರೈಕೆ",
           style: theme.textTheme.headlineMedium,
           textAlign: TextAlign.left,
         ),
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Hello Sumathi",
+                      "ನಮಸ್ಕಾರ ಸುಮತಿ",
                       style: theme.textTheme.titleMedium,
                     ),
                     Text(
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                ' PHC visit is due on 16th October 2023 ',
+                'ಮುಂದಿನ PHC ಭೇಟಿ 16ನೇ ಅಕ್ಟೋಬರ್ 2023',
                 style: theme.textTheme.bodyMedium
                     ?.copyWith(fontWeight: FontWeight.bold),
                 textAlign: TextAlign.justify,
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: ButtonContainer(
                         icon: Icons.emergency,
-                        text: 'Emergency',
+                        text: 'ತುರ್ತು ಪರಿಸ್ಥಿತಿ',
                         color: Colors.deepPurple),
                   ),
                   GestureDetector(
@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: ButtonContainer(
                         icon: Icons.woman,
-                        text: 'Profile',
+                        text: 'ವೈಯಕ್ತಿಕ ವಿವರ',
                         color: Colors.green),
                   ),
                   GestureDetector(
@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: ButtonContainer(
                         icon: Icons.comment,
-                        text: 'Complaints',
+                        text: 'ದೂರುಗಳು',
                         color: Colors.orange),
                   ),
                   GestureDetector(
@@ -123,13 +123,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.pushNamed(context, '/faq');
                     },
                     child: ButtonContainer(
-                        icon: Icons.help, text: 'FAQ', color: Colors.blue),
+                        icon: Icons.help,
+                        text: 'ಪ್ರಶ್ನೆಗಳು',
+                        color: Colors.blue),
                   ),
                 ],
               ),
             ),
             Text(
-              "Emergency Contacts",
+              "ತುರ್ತು ಸಂಪರ್ಕಗಳು",
               style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
             ),
             Row(
@@ -143,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 Text(
-                  "Mrs Asha Karyikarethe",
+                  "ಶ್ರೀಮತಿ ಆಶಾ ಕಾರ್ಯಕರ್ತೆ",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
@@ -161,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 Text(
-                  "Dr Duty Doctor",
+                  "ಡಾ ಕರ್ತವ್ಯ ವೈದ್ಯ",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
@@ -179,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 Text(
-                  "Dr Duty Doctor",
+                  "ಡಾ ಕರ್ತವ್ಯ ವೈದ್ಯ",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
@@ -197,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('In case of Emergency'),
+            title: Text('ತುರ್ತು ಪರಿಸ್ಥಿತಿಯ ಸಂದರ್ಭದಲ್ಲಿ'),
             content: TextField(
               onChanged: (value) {
                 setState(() {
@@ -205,13 +207,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 });
               },
               controller: _textFieldController,
-              decoration: InputDecoration(hintText: "Enter Year of Birth"),
+              decoration:
+                  InputDecoration(hintText: "ಹುಟ್ಟಿದ ವರ್ಷವನ್ನು ನಮೂದಿಸಿ"),
             ),
             actions: <Widget>[
               MaterialButton(
                 color: Colors.green,
                 textColor: Colors.white,
-                child: Text('OK'),
+                child: Text('ಸಲ್ಲಿಸು'),
                 onPressed: () {
                   setState(() {
                     //codeDialog = valueText;
