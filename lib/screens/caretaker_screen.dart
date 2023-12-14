@@ -21,7 +21,7 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "ಸುಲಲಿತ ಆರೈಕೆ",
+          "Janani",
           style: theme.textTheme.headlineMedium,
           textAlign: TextAlign.left,
         ),
@@ -39,7 +39,7 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "ಆಶಾ ಕಾರ್ಯಕರ್ತೆ",
+                      "Asha Worker", //ಆಶಾ ಕಾರ್ಯಕರ್ತೆ
                       style: theme.textTheme.titleMedium,
                     ),
                     Text(
@@ -58,7 +58,7 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(12),
@@ -67,13 +67,13 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                'ಶ್ರೀಮತಿ ಸುಮತಿ ಅವರು 16ನೇ ಅಕ್ಟೋಬರ್ 2023 ರಂದು ತಮ್ಮ PHC ಭೇಟಿಯನ್ನು ತಪ್ಪಿಸಿಕೊಂಡಿದ್ದಾರೆ',
+                'Smt Sumathi has missed her PHC appointment on 16th October 2023', //'ಶ್ರೀಮತಿ ಸುಮತಿ ಅವರು 16ನೇ ಅಕ್ಟೋಬರ್ 2023 ರಂದು ತಮ್ಮ PHC ಭೇಟಿಯನ್ನು ತಪ್ಪಿಸಿಕೊಂಡಿದ್ದಾರೆ'
                 style: theme.textTheme.bodyMedium
                     ?.copyWith(fontWeight: FontWeight.bold),
                 textAlign: TextAlign.justify,
               ),
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             Container(
               width: double.infinity,
               height: 380,
@@ -88,20 +88,20 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                     },
                     child: ButtonContainer(
                         icon: Icons.view_list,
-                        text: 'ನಿರೀಕ್ಷಿತ ತಾಯಂದಿರು',
+                        text: 'Expectant mothers', //ನಿರೀಕ್ಷಿತ ತಾಯಂದಿರು'
                         color: Colors.deepPurple),
                   ),
                   ButtonContainer(
                       icon: Icons.alarm,
-                      text: 'ಎಚ್ಚರಿಕೆಗಳು',
+                      text: 'Warnings', //'ಎಚ್ಚರಿಕೆಗಳು'
                       color: Colors.green),
                   ButtonContainer(
                       icon: Icons.online_prediction,
-                      text: 'ಅಪಾಯದ RHID',
+                      text: 'High Risk RHID', //'ಅಪಾಯದ RHID'
                       color: Colors.orange),
                   ButtonContainer(
                       icon: Icons.help,
-                      text: 'ವಲಸಿಗರ RHID',
+                      text: 'Immigrant RHID', //'ವಲಸಿಗರ RHID',
                       color: Colors.blue),
                 ],
               ),

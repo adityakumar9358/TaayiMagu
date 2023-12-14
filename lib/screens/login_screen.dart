@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
                 controller: usernameController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'ಬಳಕೆದಾರ ಹೆಸರು',
+                  labelText: 'Username', //'ಬಳಕೆದಾರ ಹೆಸರು',
                 ),
               ),
               const SizedBox(height: 10),
@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'ಗುಪ್ತಪದ',
+                  labelText: 'Password', //'ಗುಪ್ತಪದ',
                 ),
               ),
               const SizedBox(height: 10),
@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'ಗುಪ್ತಪದ ಮರೆತಿರಾ?',
+                    'Forgot Password', //'ಗುಪ್ತಪದ ಮರೆತಿರಾ?',
                     style: TextStyle(color: Colors.indigo),
                   ),
                 ],
@@ -60,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                   Navigator.pushNamed(context, '/home'); //caretaker
                 },
                 child: Text(
-                  'ಲಾಗಿನ್ ಮಾಡಿ',
+                  'Login', //'ಲಾಗಿನ್ ಮಾಡಿ',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

@@ -7,11 +7,11 @@ class HelperFunctions {
     String currentHour = DateFormat('kk').format(now);
     int hour = int.parse(currentHour);
     if (hour >= 5 && hour < 12) {
-      message = 'ಶುಭೋದಯ';
+      message = 'Good Morning';
     } else if (hour >= 12 && hour <= 17) {
-      message = 'ಶುಭ ಅಪರಾಹ್ನ';
+      message = 'Good Afternoon';
     } else {
-      message = 'ಶುಭ ಸಂಜೆ';
+      message = 'Good Evening';
     }
     return message;
   }

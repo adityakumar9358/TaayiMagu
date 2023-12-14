@@ -12,14 +12,14 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreen extends State<ProfileScreen> {
   final questions = [
     {
-      'question': 'ವೈಯಕ್ತಿಕ ವಿವರಗಳು',
+      'question': 'personal details',
       'answer':
-          ' ಸುಮತಿ ಎಸ್ \n DOB: 10-10-1995 \n ವಯಸ್ಸು: 28y 1m \n ತೂಕ: 168 lb \n ಎತ್ತರ: 5.1 ft'
+          'Sumathi S \n DOB: 10-10-1995 \n Age: 28y 1m \n Weight: 168 lb \n Height: 5.1 ft'
     },
     {
-      'question': 'ಆರೋಗ್ಯ ವಿವರಗಳು',
+      'question': 'health details',
       'answer':
-          ' ಪ್ರಸ್ತುತ ಔಷಧಿಗಳು: ಫೋಲಿಕ್ ಆಸಿಡ್, ಕೆಟೋರೊಲಾಕ್ (ಅಕ್ಯುಲರ್) \n ರಕ್ತದೊತ್ತಡ: 121/75 \n ನಾಡಿ: 67 ಬಿಪಿಎಂ \n ಟಿಪ್ಪಣಿಗಳು: ರೋಗಿಯು ಸುಮಾರು ಎರಡು ಮೂರು ತಿಂಗಳ ಹಿಂದೆ ಮುಖದ ಅಸ್ವಸ್ಥತೆಯೊಂದಿಗೆ ತೀವ್ರ ಸೈನುಟಿಸ್ ಅನ್ನು ಹೊಂದಿದ್ದ., ಮೂಗಿನ ದಟ್ಟಣೆ, ಕಣ್ಣು ನೋವು ಮತ್ತು ಪೊಟ್ನಾಸಲ್ ಹನಿ ಲಕ್ಷಣಗಳು. \n ಲ್ಯಾಬ್ ಫಲಿತಾಂಶಗಳು: ಎಕ್ಸ್-ರೇ, CT'
+          'Current Medications: Folic Acid, Ketorolac (acular) \n Blood Pressure: 121/75 \n Pulse: 67 bpm \n Notes: Patient had severe sinusitis with facial discomfort about two to three months ago, nasal congestion, eye pain and postnasal drip. Symptoms \n Lab results: X-ray, CT'
     }
   ];
   @override
@@ -28,7 +28,7 @@ class _ProfileScreen extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "ವೈಯಕ್ತಿಕ ವಿವರ",
+          "Personal Details",
           style: theme.textTheme.headlineMedium,
           textAlign: TextAlign.left,
         ),

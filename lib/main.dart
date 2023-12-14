@@ -25,7 +25,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Taayi Magu',
+      title: 'Janani',
       themeMode: ThemeMode.system,
       theme: theme,
       home: SplashScreen(),
