@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import generated localization
 
 import '../utils/helper_functions.dart';
 import '../widgets/button_container.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({
-    super.key,
-  });
+  final Function(Locale) setLocale;
+
+  const HomeScreen({Key? key, required this.setLocale}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -24,180 +25,206 @@ Future<void> _makePhoneCall(Uri url) async {
 class _HomeScreenState extends State<HomeScreen> {
   var _textFieldController;
 
+  bool isEnglish = true;
+
+  void _toggleLanguage() {
+    if (isEnglish) {
+      widget.setLocale(Locale('ka'));
+    } else {
+      widget.setLocale(Locale('en'));
+    }
+    setState(() {
+      isEnglish = !isEnglish;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    final localizations = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Janani',
+          localizations.key1, // 'Janani'
           style: theme.textTheme.headlineMedium,
           textAlign: TextAlign.left,
         ),
+        actions: [
+          IconButton(
+            icon: Icon(isEnglish ? Icons.language : Icons.translate),
+            onPressed: _toggleLanguage,
+          ),
+        ],
         automaticallyImplyLeading: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Hello Sumathi",
-                      style: theme.textTheme.titleMedium,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        localizations.key2, // 'Hello Sumathi'
+                        style: theme.textTheme.titleMedium,
+                      ),
+                      Text(
+                        HelperFunctions.getGreeting(),
+                        style: theme.textTheme.titleSmall,
+                      ),
+                    ],
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.lightBlue.shade100,
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                    Text(
-                      HelperFunctions.getGreeting(),
-                      style: theme.textTheme.titleSmall,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.person),
+                        SizedBox(width: 8),
+                        Text(localizations.key3), // 'Card Number- 2005678'
+                      ],
                     ),
-                  ],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.lightBlue.shade100,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Icon(Icons.person),
-                ),
-              ],
-            ),
-            SizedBox(height: 12),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.red.shade100,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                'Next PHC visit 16th October 2023',
-                style: theme.textTheme.bodyMedium
-                    ?.copyWith(fontWeight: FontWeight.bold),
-                textAlign: TextAlign.justify,
-              ),
-            ),
-            SizedBox(height: 12),
-            Container(
-              width: double.infinity,
-              height: 380,
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 12,
-                children: <Widget>[
-                  GestureDetector(
-                    onTap: () {
-                      _displayTextInputDialog(context);
-                    },
-                    child: ButtonContainer(
-                        icon: Icons.emergency,
-                        text: 'Emergency',
-                        color: Colors.deepPurple),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/profile');
-                    },
-                    child: ButtonContainer(
-                        icon: Icons.woman,
-                        text: 'Personal Details',
-                        color: Colors.green),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/complaints');
-                    },
-                    child: ButtonContainer(
-                        icon: Icons.comment,
-                        text: 'Complaints',
-                        color: Colors.orange),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/faq');
-                    },
-                    child: ButtonContainer(
-                        icon: Icons.help, text: 'FAQ', color: Colors.blue),
                   ),
                 ],
               ),
-            ),
-            Text(
-              'Important Phone Numbers',
-              style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon: new Icon(Icons.phone),
-                  onPressed: () {
-                    setState(() {
-                      _makePhoneCall(Uri.parse('tel:0597924917'));
-                    });
-                  },
+              SizedBox(height: 12),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.red.shade100,
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                Text(
-                  "Asha Worker",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                child: Text(
+                  localizations.key4, // 'Next PHC visit 16th October 2023'
+                  style: theme.textTheme.bodyMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.justify,
                 ),
-                Spacer(),
-                Text("+91 989999999"),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon: new Icon(Icons.phone),
-                  onPressed: () {
-                    setState(() {
-                      _makePhoneCall(Uri.parse('tel:0597924917'));
-                    });
-                  },
+              ),
+              SizedBox(height: 12),
+              Container(
+                width: double.infinity,
+                height: 400,
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () {
+                        _displayTextInputDialog(context);
+                      },
+                      child: ButtonContainer(
+                          icon: Icons.notification_important_rounded,
+                          text: localizations.key5, // 'Emergency'
+                          color: Colors.deepPurple),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/profile');
+                      },
+                      child: ButtonContainer(
+                          icon: Icons.pregnant_woman_sharp,
+                          text: localizations.key6, // 'Personal Details'
+                          color: Colors.green),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/faq');
+                      },
+                      child: ButtonContainer(
+                          icon: Icons.help,
+                          text: localizations.key7, // 'FAQ'
+                          color: Colors.blue),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/complaints');
+                      },
+                      child: ButtonContainer(
+                          icon: Icons.report,
+                          text: localizations.key8, // 'Complaints'
+                          color: Colors.orange),
+                    ),
+                  ],
                 ),
-                Text(
-                  "Duty Doctor",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 12),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.red.shade400,
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                Spacer(),
-                Text("+91 989999999"),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon: new Icon(Icons.phone),
-                  onPressed: () {
-                    setState(() {
-                      _makePhoneCall(Uri.parse('tel:0597924917'));
-                    });
-                  },
+                child: Text(
+                  localizations.key9, // 'Important Contact Number'
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w900,
+                    color: Colors.orange.shade200,
+                    fontSize: 15,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                Text(
-                  "PHC",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Spacer(),
-                Text("+91 989999999"),
-              ],
-            ),
-          ],
+              ),
+              SizedBox(height: 12),
+              _buildContactRow(context, Icons.phone, localizations.key10,
+                  "+91 989999999"), // 'Asha Worker'
+              _buildContactRow(context, Icons.phone, localizations.key11,
+                  "+91 989999999"), // 'Duty Doctor'
+              _buildContactRow(context, Icons.phone, localizations.key12,
+                  "+91 989999999"), // 'PHC'
+              _buildContactRow(context, Icons.phone, localizations.key13,
+                  "+91 989999999"), // 'PHC Doctor Number'
+              _buildContactRow(context, Icons.phone, localizations.key14,
+                  "+91 989999999"), // 'Personal Gynaec Number'
+            ],
+          ),
         ),
       ),
     );
   }
 
+  Row _buildContactRow(
+      BuildContext context, IconData icon, String label, String number) {
+    return Row(
+      children: [
+        IconButton(
+          icon: Icon(icon),
+          onPressed: () {
+            setState(() {
+              _makePhoneCall(Uri.parse('tel:$number'));
+            });
+          },
+        ),
+        Text(
+          label,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        Spacer(),
+        Text(number),
+      ],
+    );
+  }
+
   Future<void> _displayTextInputDialog(BuildContext context) async {
+    final localizations = AppLocalizations.of(context)!;
     return showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('In case of Emergency'),
+            title: Text(localizations.key15), // 'In case of Emergency'
             content: TextField(
               onChanged: (value) {
                 setState(() {
@@ -205,13 +232,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 });
               },
               controller: _textFieldController,
-              decoration: InputDecoration(hintText: "Enter 1234"),
+              decoration: InputDecoration(
+                  hintText: localizations.key16), // 'Enter 1234'
             ),
             actions: <Widget>[
               MaterialButton(
                 color: Colors.green,
                 textColor: Colors.white,
-                child: Text('Submit'),
+                child: Text(localizations.key17), // 'Submit'
                 onPressed: () {
                   setState(() {
                     //codeDialog = valueText;

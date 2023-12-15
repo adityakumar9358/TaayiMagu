@@ -1,19 +1,37 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/my_textfield.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
-
+  final Function(Locale) setLocale;
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+
+  LoginScreen({super.key, required this.setLocale});
 
   // sign user in method
   void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text(localizations.key21), // 'Login'
+        actions: [
+          IconButton(
+            icon: Icon(Icons.language),
+            onPressed: () {
+              // Toggle between 'en' and 'ka'
+              if (Localizations.localeOf(context).languageCode == 'en') {
+                setLocale(Locale('ka'));
+              } else {
+                setLocale(Locale('en'));
+              }
+            },
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
@@ -29,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                 controller: usernameController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Username', //'ಬಳಕೆದಾರ ಹೆಸರು',
+                  labelText: localizations.key18, // 'Username'
                 ),
               ),
               const SizedBox(height: 10),
@@ -38,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Password', //'ಗುಪ್ತಪದ',
+                  labelText: localizations.key19, // 'Password'
                 ),
               ),
               const SizedBox(height: 10),
@@ -46,21 +64,21 @@ class LoginScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'Forgot Password', //'ಗುಪ್ತಪದ ಮರೆತಿರಾ?',
+                    localizations.key20, // 'Forgot Password'
                     style: TextStyle(color: Colors.indigo),
                   ),
                 ],
               ),
               const SizedBox(height: 10),
-              FilledButton(
-                style: FilledButton.styleFrom(
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
                   minimumSize: Size.fromHeight(50),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/home'); //caretaker
                 },
                 child: Text(
-                  'Login', //'ಲಾಗಿನ್ ಮಾಡಿ',
+                  localizations.key21, // 'Login'
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

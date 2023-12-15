@@ -13,19 +13,19 @@ class ButtonContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(30), // Increased roundness of edges
       ),
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(7.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 48.0, color: Colors.white),
-          SizedBox(height: 8.0),
+          Icon(icon, size: 55.0, color: Colors.white), // Increased icon size
+          SizedBox(height: 6.0),
           Text(
             text,
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 16.0,
+                fontSize: 20.0, // Increased font size
                 color: Colors.white,
                 fontWeight: FontWeight.bold),
           ),

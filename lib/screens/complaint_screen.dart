@@ -8,6 +8,22 @@ class ComplaintScreen extends StatefulWidget {
   _ComplaintScreenState createState() => _ComplaintScreenState();
 }
 
+List<String> categories = [
+  'Pain Abdomen / Backache',
+  'Intermittent Abdominal tightening',
+  'Leaking PV',
+  'Bleeding PV / Spotting PV',
+  'WDPV / Itching PV',
+  'Burning Micturition',
+  'Giddiness / Fatigue',
+  'Headache',
+  'Vomiting',
+  'Blurring of Vision',
+  'Epigastric Pain / Heart Burn',
+  'Breathlessness'
+];
+String? selectedCategory; // Variable to hold the selected category
+
 class _ComplaintScreenState extends State<ComplaintScreen> {
   @override
   Widget build(BuildContext context) {
@@ -52,21 +68,33 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              //padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextField(
-                decoration: InputDecoration(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 15, bottom: 0),
+                //padding: EdgeInsets.symmetric(horizontal: 15),
+                child: DropdownButtonFormField<String>(
+                  decoration: const InputDecoration(
+                    labelText: 'Category', // Your label
                     border: OutlineInputBorder(),
-                    labelText: 'Category', //'ಘಟನೆ ವಿಭಾಗ',
-                    hintText: 'Select the category'), //'ಘಟನೆ ವಿಭಾಗ ಆಯ್ಕೆಮಾಡಿ'),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
+                  ),
+                  value: selectedCategory,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedCategory = newValue;
+                    });
+                  },
+                  items:
+                      categories.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                )),
+            const Padding(
+              padding:
+                  EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: SizedBox(
                 height: 200,
@@ -83,7 +111,7 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
