@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:haem_suraksha/utils/helper_functions.dart';
 
 class ComplaintScreen extends StatefulWidget {
-  ComplaintScreen({super.key});
+  const ComplaintScreen({super.key});
 
   @override
   _ComplaintScreenState createState() => _ComplaintScreenState();
@@ -117,12 +117,12 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               child: FilledButton(
                 style: FilledButton.styleFrom(
-                  minimumSize: Size.fromHeight(50),
+                  minimumSize: const Size.fromHeight(50),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/home');
                 },
-                child: Text(
+                child: const Text(
                   'Submit', //'ಸಲ್ಲಿಸು',
                   style: TextStyle(
                     fontSize: 18,

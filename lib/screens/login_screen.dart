@@ -20,13 +20,13 @@ class LoginScreen extends StatelessWidget {
         title: Text(localizations.key21), // 'Login'
         actions: [
           IconButton(
-            icon: Icon(Icons.language),
+            icon: const Icon(Icons.language),
             onPressed: () {
               // Toggle between 'en' and 'ka'
               if (Localizations.localeOf(context).languageCode == 'en') {
-                setLocale(Locale('ka'));
+                setLocale(const Locale('ka'));
               } else {
-                setLocale(Locale('en'));
+                setLocale(const Locale('en'));
               }
             },
           ),
@@ -37,16 +37,16 @@ class LoginScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 100),
+              const SizedBox(height: 100),
               Image.asset(
                 'images/logo.png',
                 width: 200,
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               TextField(
                 controller: usernameController,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   labelText: localizations.key18, // 'Username'
                 ),
               ),
@@ -55,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                 controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   labelText: localizations.key19, // 'Password'
                 ),
               ),
@@ -65,21 +65,21 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Text(
                     localizations.key20, // 'Forgot Password'
-                    style: TextStyle(color: Colors.indigo),
+                    style: const TextStyle(color: Colors.indigo),
                   ),
                 ],
               ),
               const SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size.fromHeight(50),
+                  minimumSize: const Size.fromHeight(50),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/home'); //caretaker
+                  Navigator.pushNamed(context, '/caretaker'); //caretaker
                 },
                 child: Text(
                   localizations.key21, // 'Login'
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),

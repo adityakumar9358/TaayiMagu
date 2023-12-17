@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:haem_suraksha/utils/helper_functions.dart';
 
 class FAQScreen extends StatefulWidget {
-  FAQScreen({super.key});
+  const FAQScreen({super.key});
 
   @override
   _FAQScreen createState() => _FAQScreen();

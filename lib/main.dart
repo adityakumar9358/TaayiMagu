@@ -10,18 +10,24 @@ import 'screens/complaint_screen.dart';
 import 'screens/faq_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/list_screen.dart';
+import 'screens/delay_screen.dart';
+import 'screens/monthwise_delay_screen.dart';
+import 'screens/warnings.dart';
+import 'screens/hb_chart_screen.dart';
 
 void main() {
-  runApp(MainApp());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatefulWidget {
+  const MainApp({super.key});
+
   @override
   _MainAppState createState() => _MainAppState();
 }
 
 class _MainAppState extends State<MainApp> {
-  Locale _locale = Locale('en');
+  Locale _locale = const Locale('en');
 
   void setLocale(Locale locale) {
     setState(() {
@@ -51,15 +57,19 @@ class _MainAppState extends State<MainApp> {
       locale: _locale,
       supportedLocales: const [Locale('en'), Locale('ka')],
       theme: theme,
-      home: SplashScreen(),
+      home: const SplashScreen(),
       routes: {
         '/login': (context) => LoginScreen(setLocale: setLocale),
-        '/caretaker': (context) => CareTakerScreen(),
+        '/caretaker': (context) => const CareTakerScreen(),
         '/home': (context) => HomeScreen(setLocale: setLocale),
-        '/complaints': (context) => ComplaintScreen(),
-        '/faq': (context) => FAQScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/list': (context) => ListScreen(),
+        '/complaints': (context) => const ComplaintScreen(),
+        '/faq': (context) => const FAQScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/list': (context) => const ListScreen(),
+        '/ANCdelay': (context) => const DelayScreen(),
+        '/delay': (context) => const MonthwiseDelay(),
+        '/warnings': (context) => const Warnings(),
+        '/hbchart': (context) => const HbChart(),
       },
     );
   }

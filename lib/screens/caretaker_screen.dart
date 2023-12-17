@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../utils/helper_functions.dart';
 import '../widgets/button_container.dart';
 
 class CareTakerScreen extends StatefulWidget {
-  CareTakerScreen({super.key});
+  const CareTakerScreen({super.key});
 
   @override
   State<CareTakerScreen> createState() => _CareTakerScreenState();
@@ -16,7 +14,7 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    String _message = "";
+    String message = "";
 
     return Scaffold(
       appBar: AppBar(
@@ -74,7 +72,7 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
               ),
             ),
             const SizedBox(height: 12),
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 380,
               child: GridView.count(
@@ -86,23 +84,55 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                     onTap: () {
                       Navigator.pushNamed(context, '/list');
                     },
-                    child: ButtonContainer(
+                    child: const ButtonContainer(
                         icon: Icons.view_list,
                         text: 'Expectant mothers', //ನಿರೀಕ್ಷಿತ ತಾಯಂದಿರು'
                         color: Colors.deepPurple),
                   ),
-                  ButtonContainer(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/warnings');
+                    },
+                    child:const ButtonContainer(
                       icon: Icons.alarm,
-                      text: 'Warnings', //'ಎಚ್ಚರಿಕೆಗಳು'
+                      text: 'Warnings', 
                       color: Colors.green),
-                  ButtonContainer(
+                  ),
+                  const ButtonContainer(
                       icon: Icons.online_prediction,
                       text: 'High Risk RHID', //'ಅಪಾಯದ RHID'
                       color: Colors.orange),
-                  ButtonContainer(
+                  const ButtonContainer(
                       icon: Icons.help,
                       text: 'Immigrant RHID', //'ವಲಸಿಗರ RHID',
                       color: Colors.blue),
+                      GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/ANCdelay');
+                    },
+                    child: const ButtonContainer(
+                        icon: Icons.hourglass_empty,
+                        text: 'ANC Delay', 
+                        color: Colors.red),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/delay');
+                    },
+                    child: const ButtonContainer(
+                        icon: Icons.watch_later,
+                        text: 'Delay', 
+                        color: Colors.amber),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/hbchart');
+                    },
+                    child: const ButtonContainer(
+                        icon: Icons.pie_chart,
+                        text: 'Haemoglobin Chart', 
+                        color: Colors.teal),
+                  ),
                 ],
               ),
             ),
