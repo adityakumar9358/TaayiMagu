@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:haem_suraksha/utils/helper_functions.dart';
 import 'package:intl/intl.dart';
 
 class ListScreen extends StatefulWidget {
-  ListScreen({super.key});
+  const ListScreen({super.key});
 
   @override
   _ListScreenState createState() => _ListScreenState();
@@ -28,7 +26,6 @@ class _ListScreenState extends State<ListScreen> {
     Patient('Expectant Mother 7', DateTime.parse('2023-12-06 15:30:00')),
     Patient('Expectant Mother 8', DateTime.parse('2023-12-06 15:30:00')),
     Patient('Expectant Mother 9', DateTime.parse('2023-12-07 15:30:00')),
-    // Add more patient data here
   ];
 
   @override

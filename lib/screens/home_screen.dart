@@ -8,7 +8,7 @@ import '../widgets/button_container.dart';
 class HomeScreen extends StatefulWidget {
   final Function(Locale) setLocale;
 
-  const HomeScreen({Key? key, required this.setLocale}) : super(key: key);
+  const HomeScreen({super.key, required this.setLocale});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -29,9 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _toggleLanguage() {
     if (isEnglish) {
-      widget.setLocale(Locale('ka'));
+      widget.setLocale(const Locale('ka'));
     } else {
-      widget.setLocale(Locale('en'));
+      widget.setLocale(const Locale('en'));
     }
     setState(() {
       isEnglish = !isEnglish;
@@ -89,15 +89,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.person),
-                        SizedBox(width: 8),
+                        const Icon(Icons.person),
+                        const SizedBox(width: 8),
                         Text(localizations.key3), // 'Card Number- 2005678'
                       ],
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(12),
@@ -112,8 +112,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   textAlign: TextAlign.justify,
                 ),
               ),
-              SizedBox(height: 12),
-              Container(
+              const SizedBox(height: 12),
+              SizedBox(
                 width: double.infinity,
                 height: 400,
                 child: GridView.count(
@@ -160,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(12),
@@ -178,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               _buildContactRow(context, Icons.phone, localizations.key10,
                   "+91 989999999"), // 'Asha Worker'
               _buildContactRow(context, Icons.phone, localizations.key11,
@@ -210,9 +210,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Text(
           label,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        Spacer(),
+        const Spacer(),
         Text(number),
       ],
     );

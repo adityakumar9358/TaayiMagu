@@ -13,24 +13,24 @@ class SplashScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 200),
+              const SizedBox(height: 200),
               Image.asset('images/logo.png', width: 300),
-              SizedBox(height: 50),
-              Text("Janani",
+              const SizedBox(height: 50),
+              const Text("Janani",
                   style: TextStyle(fontSize: 32), textAlign: TextAlign.left),
-              Text(
+              const Text(
                 "Your Journey, Our Care",
                 style: TextStyle(fontSize: 18),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               FilledButton(
                 style: FilledButton.styleFrom(
-                  minimumSize: Size.fromHeight(50),
+                  minimumSize: const Size.fromHeight(50),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/login');
                 },
-                child: Text(
+                child: const Text(
                   'Start',
                   style: TextStyle(
                     fontSize: 18,
