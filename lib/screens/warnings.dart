@@ -75,7 +75,7 @@ class _WarningsState extends State<Warnings> {
   }
 
   Color _getPatientColor(Patient patient) {
-    // Set color based on vital sign values
+    //color based on vital sign values
     if (patient.hb < 12.0 || patient.hb > 15.5 || patient.hb == 0.0 || 
         patient.pulse < 60 || patient.pulse > 100 ||
         patient.spo2 < 95 || patient.spo2 > 100 ||

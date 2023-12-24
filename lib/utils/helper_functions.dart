@@ -15,4 +15,7 @@ class HelperFunctions {
     }
     return message;
   }
+   static String formatDateTime(DateTime dateTime) {
+    return '${dateTime.day}-${dateTime.month}-${dateTime.year} ${dateTime.hour}:${dateTime.minute}:${dateTime.second}';
+  }
 }

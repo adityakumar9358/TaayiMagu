@@ -133,6 +133,15 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                         text: 'Haemoglobin Chart', 
                         color: Colors.teal),
                   ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context,'/complaints_list');
+                    },
+                    child: const ButtonContainer(
+                        icon: Icons.feedback_outlined,
+                        text: 'Complaints', 
+                        color: Colors.purple),
+                  ),
                 ],
               ),
             ),

@@ -14,6 +14,7 @@ import 'screens/delay_screen.dart';
 import 'screens/monthwise_delay_screen.dart';
 import 'screens/warnings.dart';
 import 'screens/hb_chart_screen.dart';
+import 'screens/complaints_list_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -70,6 +71,7 @@ class _MainAppState extends State<MainApp> {
         '/delay': (context) => const MonthwiseDelay(),
         '/warnings': (context) => const Warnings(),
         '/hbchart': (context) => const HbChart(),
+        '/complaints_list': (context) => const ComplaintsList(),
       },
     );
   }
