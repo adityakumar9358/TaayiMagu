@@ -74,7 +74,7 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
             const SizedBox(height: 12),
             SizedBox(
               width: double.infinity,
-              height: 380,
+              height: 550,
               child: GridView.count(
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
@@ -87,7 +87,16 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                     child: const ButtonContainer(
                         icon: Icons.view_list,
                         text: 'Expectant mothers', //ನಿರೀಕ್ಷಿತ ತಾಯಂದಿರು'
-                        color: Colors.deepPurple),
+                        color: Color.fromARGB(255, 235, 114, 154)),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/warning_screen');
+                    },
+                    child:const ButtonContainer(
+                      icon: Icons.alarm,
+                      text: 'Due Dates', 
+                      color: Colors.indigo),
                   ),
                   GestureDetector(
                     onTap: () {
@@ -132,6 +141,15 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                         icon: Icons.pie_chart,
                         text: 'Haemoglobin Chart', 
                         color: Colors.teal),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context,'/complaints_list');
+                    },
+                    child: const ButtonContainer(
+                        icon: Icons.feedback_outlined,
+                        text: 'Complaints', 
+                        color: Colors.purple),
                   ),
                 ],
               ),

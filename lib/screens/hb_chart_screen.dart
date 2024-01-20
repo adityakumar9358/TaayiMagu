@@ -61,12 +61,11 @@ class _HbChartState extends State<HbChart> {
                     return;
                   }
 
-                  // Handle category selection
                   setState(() {
                     selectedCategory = getCategoryFromIndex(pieTouchResponse.touchedSection!.touchedSectionIndex);
                   });
 
-                  // Show the list of patients for the selected category
+                  //list of patients for the selected category
                   _showPatientsForCategory(context, selectedCategory);
                 }),
               ),
@@ -110,7 +109,7 @@ class _HbChartState extends State<HbChart> {
       return PieChartSectionData(
         color: color,
         value: value,
-        title: '$category\n${(value * 100).toStringAsFixed(2)}%', // Display category and percentage
+        title: '$category\n${(value * 100).toStringAsFixed(2)}%',
         radius: 70,
         titleStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
       );
