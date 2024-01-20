@@ -39,6 +39,14 @@ class _WarningsState extends State<Warnings> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+     List<Patient> abnormalPatients = patients.where((patient) =>
+      patient.hb < 12.0 || patient.hb > 15.5 || patient.hb == 0.0 ||
+      patient.pulse < 60 || patient.pulse > 100 ||
+      patient.spo2 < 95 || patient.spo2 > 100 ||
+      patient.gluc > 126 ||
+      patient.fhr < 120 || patient.fhr > 160
+    ).toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -49,24 +57,24 @@ class _WarningsState extends State<Warnings> {
         automaticallyImplyLeading: false,
       ),
       body: ListView.builder(
-        itemCount: patients.length,
+        itemCount: abnormalPatients.length,
         itemBuilder: (context, index) {
           return ListTile(
             leading: Icon(
               Icons.person,
-             color: _getPatientColor(patients[index]),
+              color: _getPatientColor(abnormalPatients[index]),
             ),
             title: Text(
-              patients[index].name,
+              abnormalPatients[index].name,
               style: TextStyle(
-                color: _getPatientColor(patients[index]),
+                color: _getPatientColor(abnormalPatients[index]),
               ),
             ),
             subtitle: Text(
-              'Last Appointment Date: ${DateFormat('dd-MMM-yyyy').format(patients[index].LastAppoitment)}',
+              'Last Appointment Date: ${DateFormat('dd-MMM-yyyy').format(abnormalPatients[index].LastAppoitment)}',
             ),
             onTap: () {
-              _showAlert(context, patients[index]);
+              _showAlert(context, abnormalPatients[index]);
             },
           );
         },
