@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,12 +13,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: FAQScreen(),
+      home: const FAQScreen(),
     );
   }
 }
 
 class FAQScreen extends StatefulWidget {
+  const FAQScreen({super.key});
+
   @override
   _FAQScreenState createState() => _FAQScreenState();
 }
@@ -168,7 +172,7 @@ class _FAQScreenState extends State<FAQScreen> {
               itemCount: _sections.length,
               itemBuilder: (context, index) => Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ChoiceChip(
                   label: Text(_sections[index]['title']),
                   selected: _selectedIndex == index,
@@ -197,14 +201,14 @@ class _FAQScreenState extends State<FAQScreen> {
                   final answer =
                       _sections[_selectedIndex]['content'][index]['answer'];
                   return Card(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     elevation: 2,
                     child: ExpansionTile(
                       tilePadding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       title: Text(
                         question,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                       children: [
                         Padding(
@@ -212,7 +216,7 @@ class _FAQScreenState extends State<FAQScreen> {
                           child: Text(
                             answer,
                             textAlign: TextAlign.justify,
-                            style: TextStyle(fontSize: 16),
+                            style: const TextStyle(fontSize: 16),
                           ),
                         ),
                       ],

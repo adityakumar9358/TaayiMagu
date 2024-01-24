@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:haem_suraksha/utils/helper_functions.dart';
 import 'package:intl/intl.dart';
 
 class WarningScreen extends StatefulWidget {
-  WarningScreen({super.key});
+  const WarningScreen({super.key});
 
   @override
   _WarningScreenState createState() => _WarningScreenState();
@@ -52,14 +50,14 @@ class _WarningScreenState extends State<WarningScreen> {
           return ListTile(
             leading: Icon(
               Icons.person,
-              color: patients[index].dueDate.subtract(Duration(days: 7)).isBefore(DateTime.now())
+              color: patients[index].dueDate.subtract(const Duration(days: 7)).isBefore(DateTime.now())
                   ? Colors.red
                   : Colors.blue,
             ),
             title: Text(
               patients[index].name,
               style: TextStyle(
-                color: patients[index].dueDate.subtract(Duration(days: 7)).isBefore(DateTime.now())
+                color: patients[index].dueDate.subtract(const Duration(days: 7)).isBefore(DateTime.now())
                     ? Colors.red
                     : Colors.blue,
               ),
@@ -76,7 +74,7 @@ class _WarningScreenState extends State<WarningScreen> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text('Close'),
+                      child: const Text('Close'),
                     )
                   ],
                   title: const Text('Reminder'),

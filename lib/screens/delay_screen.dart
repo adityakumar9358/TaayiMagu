@@ -48,13 +48,13 @@ class _DelayScreenState extends State<DelayScreen> {
           return ListTile(
             leading: Icon(
               Icons.person,
-              color: patients[index].firstAncDate.add(Duration(days: 90)).isBefore(DateTime.now())
+              color: patients[index].firstAncDate.add(const Duration(days: 90)).isBefore(DateTime.now())
                   ? Colors.red
                   : Colors.blue,
             ), // Icon for patients
             title: Text(patients[index].name,
                 style: TextStyle(
-                  color: patients[index].firstAncDate.add(Duration(days: 90)).isBefore(DateTime.now())
+                  color: patients[index].firstAncDate.add(const Duration(days: 90)).isBefore(DateTime.now())
                       ? Colors.red
                       : Colors.blue,
                 )),
@@ -68,7 +68,7 @@ class _DelayScreenState extends State<DelayScreen> {
                   actions: [
                     TextButton(onPressed: () {
                       Navigator.pop(context);
-                    }, child: Text('Close'))
+                    }, child: const Text('Close'))
                   ],
                   title: const Text('Alert!'),
                   contentPadding: const EdgeInsets.all(20),

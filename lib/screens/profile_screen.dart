@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key});
+  const ProfileScreen({super.key});
 
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
@@ -52,7 +52,7 @@ class _ProfileScreenState extends State<ProfileScreen>
       appBar: AppBar(
         title: Text(
           "Profile",
-          style: theme.textTheme.headline6,
+          style: theme.textTheme.titleLarge,
         ),
       ),
       body: Column(
@@ -60,17 +60,17 @@ class _ProfileScreenState extends State<ProfileScreen>
         children: [
           // Profile Image and Name
           Container(
-            margin: EdgeInsets.only(top: 16),
-            padding: EdgeInsets.all(8),
+            margin: const EdgeInsets.only(top: 16),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 127, 208, 205),
+              color: const Color.fromARGB(255, 127, 208, 205),
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 2,
                   blurRadius: 8,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
@@ -80,7 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               backgroundImage: AssetImage(profileImage),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
             profileName,
             style: TextStyle(
@@ -99,7 +99,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               ), // Added border
               borderRadius: BorderRadius.circular(10),
             ),
-            margin: EdgeInsets.symmetric(vertical: 8),
+            margin: const EdgeInsets.symmetric(vertical: 8),
             child: TabBar(
               controller: _tabController,
               tabs: const [
@@ -120,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               labelColor:
                   Colors.purple[400], // Set the color for the selected tab text
               unselectedLabelColor: theme.primaryColor,
-              labelStyle: TextStyle(
+              labelStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -130,7 +130,7 @@ class _ProfileScreenState extends State<ProfileScreen>
           // Expanded TabBarView
           Expanded(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
@@ -163,8 +163,8 @@ class _ProfileScreenState extends State<ProfileScreen>
           children: details.entries
               .map(
                 (entry) => Container(
-                  margin: EdgeInsets.only(bottom: 16),
-                  padding: EdgeInsets.all(16),
+                  margin: const EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
@@ -173,7 +173,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 2,
                         blurRadius: 5,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
@@ -182,16 +182,16 @@ class _ProfileScreenState extends State<ProfileScreen>
                     children: [
                       Text(
                         "${entry.key}:",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           entry.value,
-                          style: TextStyle(fontSize: 16),
+                          style: const TextStyle(fontSize: 16),
                         ),
                       ),
                     ],
@@ -206,7 +206,7 @@ class _ProfileScreenState extends State<ProfileScreen>
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: ProfileScreen(),
   ));
 }

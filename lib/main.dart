@@ -65,7 +65,7 @@ class _MainAppState extends State<MainApp> {
         '/caretaker': (context) => const CareTakerScreen(),
         '/home': (context) => HomeScreen(setLocale: setLocale),
         '/complaints': (context) => const ComplaintScreen(),
-        '/faq': (context) => FAQScreen(),
+        '/faq': (context) => const FAQScreen(),
         '/profile': (context) => const ProfileScreen(),
         '/list': (context) => const ListScreen(),
         '/ANCdelay': (context) => const DelayScreen(),
@@ -73,7 +73,7 @@ class _MainAppState extends State<MainApp> {
         '/warnings': (context) => const Warnings(),
         '/hbchart': (context) => const HbChart(),
         '/complaints_list': (context) => const ComplaintsList(),
-        '/warning_screen': (context) => WarningScreen(),
+        '/warning_screen': (context) => const WarningScreen(),
       },
     );
   }

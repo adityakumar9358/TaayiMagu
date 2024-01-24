@@ -77,7 +77,7 @@ Widget build(BuildContext context) {
               leading: Icon(
                 Icons.person,
                 color: patient.MissedDate
-                            .add(Duration(days: 14))
+                            .add(const Duration(days: 14))
                             .isBefore(DateTime.now())
                     ? Colors.red
                     : Colors.blue,
@@ -86,7 +86,7 @@ Widget build(BuildContext context) {
                 patient.name,
                 style: TextStyle(
                   color: patient.MissedDate
-                              .add(Duration(days: 14))
+                              .add(const Duration(days: 14))
                               .isBefore(DateTime.now())
                       ? Colors.red
                       : Colors.blue,
@@ -104,7 +104,7 @@ Widget build(BuildContext context) {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text('Close'),
+                        child: const Text('Close'),
                       )
                     ],
                     title: const Text('Alert!'),

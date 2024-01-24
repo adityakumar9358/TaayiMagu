@@ -1,10 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'dart:ffi';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class HbChart extends StatefulWidget {
-  const HbChart({Key? key}) : super(key: key);
+  const HbChart({super.key});
 
   @override
   State<HbChart> createState() => _HbChartState();
@@ -43,7 +41,7 @@ class _HbChartState extends State<HbChart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hb Chart'),
+        title: const Text('Hb Chart'),
       ),
       body: Column(
         children: [
@@ -111,7 +109,7 @@ class _HbChartState extends State<HbChart> {
         value: value,
         title: '$category\n${(value * 100).toStringAsFixed(2)}%',
         radius: 70,
-        titleStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
+        titleStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
       );
     });
   }
@@ -165,7 +163,7 @@ class _HbChartState extends State<HbChart> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Close'),
+          child: const Text('Close'),
         ),
       ],
     ),
