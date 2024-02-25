@@ -144,12 +144,21 @@ class _CareTakerScreenState extends State<CareTakerScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
+                      Navigator.pushNamed(context,'/health_grievance');
+                    },
+                    child: const ButtonContainer(
+                        icon: Icons.health_and_safety_sharp,
+                        text: 'Health Grievances', 
+                        color: Colors.purple),
+                  ),
+                  GestureDetector(
+                    onTap: () {
                       Navigator.pushNamed(context,'/complaints_list');
                     },
                     child: const ButtonContainer(
                         icon: Icons.feedback_outlined,
                         text: 'Complaints', 
-                        color: Colors.purple),
+                        color: Color.fromARGB(255, 247, 19, 3)),
                   ),
                 ],
               ),

@@ -1,44 +1,22 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'DetailsScreen.dart';
+import 'patients.dart';
 
 class HbChart extends StatefulWidget {
-  const HbChart({super.key});
+  const HbChart({Key? key}) : super(key: key);
 
   @override
   State<HbChart> createState() => _HbChartState();
 }
 
-class Patient {
-  final String name;
-  final DateTime lastAppointment;
-  final double hb;
-  final int pulse;
-  final int spo2;
-  final int gluc;
-  final int fhr;
-
-  Patient(this.name, this.lastAppointment, this.hb, this.pulse, this.spo2, this.gluc, this.fhr);
-}
-
 class _HbChartState extends State<HbChart> {
-  final List<Patient> patients = [
-    Patient('Expectant Mother 1', DateTime.parse('2023-08-15 15:30:00'), 10.0, 75, 98, 90, 140),
-    Patient('Expectant Mother 2', DateTime.parse('2023-08-20 10:15:00'), 10.0, 85, 98, 90, 140),
-    Patient('Expectant Mother 3', DateTime.parse('2023-08-25 14:00:00'), 10.0, 95, 93, 90, 140),
-    Patient('Expectant Mother 4', DateTime.parse('2023-09-01 11:30:00'), 10.2, 90, 98, 160, 140),
-    Patient('Expectant Mother 5', DateTime.parse('2023-09-05 10:15:00'), 14.5, 105, 98, 90, 110),
-    Patient('Expectant Mother 6', DateTime.parse('2023-09-07 16:30:00'), 15.1, 65, 98, 90, 100),
-    Patient('Expectant Mother 7', DateTime.parse('2023-09-10 12:15:00'), 15.5, 96, 97, 90, 150),
-    Patient('Expectant Mother 8', DateTime.parse('2023-09-13 15:10:00'), 16.2, 97, 99, 80, 140),
-    Patient('Expectant Mother 9', DateTime.parse('2023-09-14 13:01:00'), 13.6, 98, 98, 99, 144),
-    Patient('Expectant Mother 10', DateTime.parse('2023-09-30 11:35:00'), 9.9, 99, 99, 70, 157),
-    Patient('Expectant Mother 11', DateTime.parse('2023-10-02 15:05:00'), 0.0, 90, 95, 78, 141),
-  ];
-
   String selectedCategory = 'Normal';
 
   @override
   Widget build(BuildContext context) {
+    patients.sort((a, b) => a.hb.compareTo(b.hb)); // Sorting patients by haemoglobin values
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Hb Chart'),
@@ -46,26 +24,41 @@ class _HbChartState extends State<HbChart> {
       body: Column(
         children: [
           SizedBox(
-            height: 550,
+            height: 300,
             child: PieChart(
               PieChartData(
                 sections: generateSections(),
                 centerSpaceRadius: 60,
                 sectionsSpace: 0,
                 pieTouchData: PieTouchData(touchCallback: (FlTouchEvent event, pieTouchResponse) {
-                  if (!event.isInterestedForInteractions ||
-                      pieTouchResponse == null ||
-                      pieTouchResponse.touchedSection == null) {
+                  if (!event.isInterestedForInteractions || pieTouchResponse == null || pieTouchResponse.touchedSection == null) {
                     return;
                   }
 
                   setState(() {
                     selectedCategory = getCategoryFromIndex(pieTouchResponse.touchedSection!.touchedSectionIndex);
                   });
-
-                  //list of patients for the selected category
-                  _showPatientsForCategory(context, selectedCategory);
                 }),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Text(
+                    'Patients in $selectedCategory Category',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 8),
+                  Expanded(
+                    child: ListView(
+                      children: generatePatientList(selectedCategory),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -127,46 +120,51 @@ class _HbChartState extends State<HbChart> {
     }
   }
 
-  void _showPatientsForCategory(BuildContext context, String category) {
-  List<Patient> filteredPatients;
-  String haemoglobinRange;
+  List<Widget> generatePatientList(String category) {
+    List<Patient> filteredPatients;
+    String haemoglobinRange;
 
-  switch (category) {
-    case 'Normal':
-      filteredPatients = patients.where((p) => p.hb > 12.5).toList();
-      haemoglobinRange = '> 12.5';
-      break;
-    case 'Low':
-      filteredPatients = patients.where((p) => p.hb >= 10 && p.hb <= 12.5).toList();
-      haemoglobinRange = '10.0 - 12.5';
-      break;
-    case 'Very Low':
-      filteredPatients = patients.where((p) => p.hb < 10).toList();
-      haemoglobinRange = '< 10.0';
-      break;
-    default:
-      filteredPatients = [];
-      haemoglobinRange = '';
+    switch (category) {
+      case 'Normal':
+        filteredPatients = patients.where((p) => p.hb > 12.5).toList();
+        haemoglobinRange = '> 12.5';
+        break;
+      case 'Low':
+        filteredPatients = patients.where((p) => p.hb >= 10 && p.hb <= 12.5).toList();
+        haemoglobinRange = '10.0 - 12.5';
+        break;
+      case 'Very Low':
+        filteredPatients = patients.where((p) => p.hb < 10).toList();
+        haemoglobinRange = '< 10.0';
+        break;
+      default:
+        filteredPatients = [];
+        haemoglobinRange = '';
+    }
+
+    return filteredPatients.map((patient) => buildPatientTile(patient, haemoglobinRange)).toList();
   }
 
-  showDialog(
-    context: context,
-    builder: (context) => AlertDialog(
-      title: Text('Patients in $category Category(Haemoglobin Range: $haemoglobinRange)'),
-      content: Column(
+  Widget buildPatientTile(Patient patient, String haemoglobinRange) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          for (var patient in filteredPatients) Text(patient.name),
+          Text(patient.name),
+          Text('Haemoglobin: ${patient.hb}'),
+          SizedBox(height: 8),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailScreen(patient: patient)),
+              );
+            },
+            child: Text('View Profile'),
+          ),
         ],
       ),
-      actions: [
-        TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Close'),
-        ),
-      ],
-    ),
-  );
-}
+    );
+  }
 }

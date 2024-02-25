@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:haem_suraksha/utils/helper_functions.dart';
 import 'dart:math';
+import 'DetailsScreen.dart';
+import 'patients.dart';
 
-class ComplaintsList extends StatefulWidget {
-  const ComplaintsList({super.key});
+class HealthGrievance extends StatefulWidget {
+  const HealthGrievance({super.key});
 
   @override
-  State<ComplaintsList> createState() => _ComplaintsListState();
+  State<HealthGrievance> createState() => _HealthGrievanceState();
 }
 
 List<String> categories = [
@@ -24,32 +26,7 @@ List<String> categories = [
   'Breathlessness'
 ];
 
-class Patient {
-  final String name;
-  final DateTime ComplainDateTime;
-  final double hb;
-  final int pulse;
-  final int spo2;
-  final int gluc;
-  final int fhr;
-
-  Patient(this.name, this.ComplainDateTime,this.hb,this.pulse,this.spo2,this.gluc,this.fhr);
-}
-
-class _ComplaintsListState extends State<ComplaintsList> {
-  final List<Patient> patients = [
-    Patient('Expectant Mother 1', DateTime.parse('2023-08-15 15:30:00'),10.0,75,98,90,140),
-    Patient('Expectant Mother 2', DateTime.parse('2023-08-20 10:15:00'),13.6,85,98,90,140),
-    Patient('Expectant Mother 3', DateTime.parse('2023-08-25 14:00:00'),12.9,95,93,90,140),
-    Patient('Expectant Mother 4', DateTime.parse('2023-09-01 11:30:00'),13.2,90,98,160,140),
-    Patient('Expectant Mother 5', DateTime.parse('2023-09-05 10:15:00'),14.5,105,98,90,110),
-    Patient('Expectant Mother 6', DateTime.parse('2023-09-07 16:30:00'),15.1,65,98,90,100),
-    Patient('Expectant Mother 7', DateTime.parse('2023-09-10 12:15:00'),15.5,96,97,90,150),
-    Patient('Expectant Mother 8', DateTime.parse('2023-09-13 15:10:00'),16.2,97,99,80,140),
-    Patient('Expectant Mother 9', DateTime.parse('2023-09-14 13:01:00'),13.6,98,98,99,144),
-    Patient('Expectant Mother 10', DateTime.parse('2023-09-30 11:35:00'),12.9,99,99,70,157),
-    Patient('Expectant Mother 11', DateTime.parse('2023-10-02 15:05:00'),0.0,90,95,78,141),
-  ];
+class _HealthGrievanceState extends State<HealthGrievance> {
 
   Random random = Random();
 
@@ -57,13 +34,10 @@ class _ComplaintsListState extends State<ComplaintsList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Complaints',style: TextStyle(
+        title: const Text('Health Grievances',style: TextStyle(
                   fontSize: 28.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
                 ),
                 ),
-        backgroundColor: Colors.red[600],
       ),
       body: ListView.builder(
         itemCount: patients.length,
@@ -95,7 +69,12 @@ class _ComplaintsListState extends State<ComplaintsList> {
               ),
               tileColor: Colors.white,
               onTap: () {
-                _showPatientDetails(context, patient);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(patient: patient),
+                  ),
+                );
               },
             ),
           );
