@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: ButtonContainer(
                           icon: Icons.notification_important_rounded,
                           text: localizations.key5, // 'Emergency'
-                          color: Colors.deepPurple),
+                          color: Colors.red),
                     ),
                     GestureDetector(
                       onTap: () {
