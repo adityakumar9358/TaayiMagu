@@ -4,7 +4,7 @@ import 'patients.dart';
 import 'DetailsScreen.dart';
 
 class WarningScreen extends StatefulWidget {
-  const WarningScreen({Key? key}) : super(key: key);
+  const WarningScreen({super.key});
 
   @override
   _WarningScreenState createState() => _WarningScreenState();
@@ -21,7 +21,7 @@ class _WarningScreenState extends State<WarningScreen> {
       appBar: AppBar(
         title: Text(
           "Due Date of Mothers",
-          style: theme.textTheme.headline6,
+          style: theme.textTheme.titleLarge,
           textAlign: TextAlign.center,
         ),
         automaticallyImplyLeading: false,
@@ -53,7 +53,7 @@ class _WarningScreenState extends State<WarningScreen> {
                       color: textColor,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     '${daysUntilDueDate.abs()} days',
                     style: TextStyle(

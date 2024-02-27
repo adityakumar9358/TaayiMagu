@@ -4,7 +4,7 @@ import 'patients.dart';
 import 'DetailsScreen.dart';
 
 class DelayScreen extends StatefulWidget {
-  const DelayScreen({Key? key}) : super(key: key);
+  const DelayScreen({super.key});
 
   @override
   _DelayScreenState createState() => _DelayScreenState();
@@ -18,7 +18,7 @@ class _DelayScreenState extends State<DelayScreen> {
       appBar: AppBar(
         title: Text(
           "ANC Delay",
-          style: theme.textTheme.headline6,
+          style: theme.textTheme.titleLarge,
           textAlign: TextAlign.left,
         ),
         automaticallyImplyLeading: false,
@@ -61,7 +61,7 @@ class _DelayScreenState extends State<DelayScreen> {
                           : Colors.blue,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     '$daysSinceFirstANC days',
                     style: TextStyle(

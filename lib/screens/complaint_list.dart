@@ -5,7 +5,7 @@ import 'DetailsScreen.dart';
 import 'patients.dart';
 
 class ComplaintsList extends StatefulWidget {
-  const ComplaintsList({Key? key}) : super(key: key);
+  const ComplaintsList({super.key});
 
   @override
   State<ComplaintsList> createState() => _ComplaintsListState();
@@ -32,7 +32,7 @@ class _ComplaintsListState extends State<ComplaintsList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Complaints',
           style: TextStyle(
             fontSize: 28.0,
@@ -48,12 +48,12 @@ class _ComplaintsListState extends State<ComplaintsList> {
           String randomComplaint = complaints[randomIndex];
 
           return Card(
-            margin: EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
             color: Colors.lightBlueAccent,
             child: ListTile(
               title: Text(
                 patient.name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -62,7 +62,7 @@ class _ComplaintsListState extends State<ComplaintsList> {
               subtitle: Text(
                 'Complaint: $randomComplaint'
                 '\nSubmitted on: ${HelperFunctions.formatDateTime(patient.ComplainDateTime)}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14.0,
                   color: Colors.black54,
                 ),

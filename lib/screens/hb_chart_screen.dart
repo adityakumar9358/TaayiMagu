@@ -4,7 +4,7 @@ import 'DetailsScreen.dart';
 import 'patients.dart';
 
 class HbChart extends StatefulWidget {
-  const HbChart({Key? key}) : super(key: key);
+  const HbChart({super.key});
 
   @override
   State<HbChart> createState() => _HbChartState();
@@ -50,9 +50,9 @@ class _HbChartState extends State<HbChart> {
                   Text(
                     'Patients in $selectedCategory Category',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Expanded(
                     child: ListView(
                       children: generatePatientList(selectedCategory),
@@ -153,7 +153,7 @@ class _HbChartState extends State<HbChart> {
         children: [
           Text(patient.name),
           Text('Haemoglobin: ${patient.hb}'),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           ElevatedButton(
             onPressed: () {
               Navigator.push(
@@ -161,7 +161,7 @@ class _HbChartState extends State<HbChart> {
                 MaterialPageRoute(builder: (context) => DetailScreen(patient: patient)),
               );
             },
-            child: Text('View Profile'),
+            child: const Text('View Profile'),
           ),
         ],
       ),

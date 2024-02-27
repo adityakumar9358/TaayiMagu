@@ -5,7 +5,7 @@ import 'patients.dart';
 class DetailScreen extends StatefulWidget {
   final Patient patient;
 
-  const DetailScreen({required this.patient});
+  const DetailScreen({super.key, required this.patient});
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
@@ -32,7 +32,7 @@ class _DetailScreenState extends State<DetailScreen>
     ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.patient.name + "'s Profile"),
+        title: Text("${widget.patient.name}'s Profile"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

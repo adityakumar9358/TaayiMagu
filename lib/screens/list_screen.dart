@@ -29,13 +29,13 @@ class _ListScreenState extends State<ListScreen> {
         itemCount: patients.length,
         itemBuilder: (context, index) {
           return ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.person,
              color: Color.fromARGB(255, 20, 18, 19),
             ),
             title: Text(
               patients[index].name,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Color.fromARGB(255, 20, 18, 19),
                 fontWeight: FontWeight.bold,
               ),

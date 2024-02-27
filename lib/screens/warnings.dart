@@ -5,7 +5,7 @@ import 'DetailsScreen.dart';
 import 'patients.dart';
 
 class Warnings extends StatefulWidget {
-  const Warnings({Key? key}) : super(key: key);
+  const Warnings({super.key});
 
   @override
   State<Warnings> createState() => _WarningsState();
@@ -31,7 +31,7 @@ class _WarningsState extends State<Warnings> {
       appBar: AppBar(
         title: Text(
           "Warnings",
-          style: theme.textTheme.headline6,
+          style: theme.textTheme.titleLarge,
           textAlign: TextAlign.left,
         ),
         automaticallyImplyLeading: false,
@@ -89,7 +89,7 @@ class _WarningsState extends State<Warnings> {
             onPressed: () {
               launch('tel:${patient.phno}');
             },
-            child: Text('Call'),
+            child: const Text('Call'),
           ),
           ElevatedButton(
             onPressed: () {
@@ -100,7 +100,7 @@ class _WarningsState extends State<Warnings> {
                 ),
               );
             },
-            child: Text('View Profile'),
+            child: const Text('View Profile'),
           ),
           TextButton(
             onPressed: () {

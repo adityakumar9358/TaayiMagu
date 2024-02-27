@@ -4,7 +4,7 @@ import 'patients.dart';
 import 'DetailsScreen.dart';
 
 class MonthwiseDelay extends StatefulWidget {
-  const MonthwiseDelay({Key? key}) : super(key: key);
+  const MonthwiseDelay({super.key});
 
   @override
   State<MonthwiseDelay> createState() => _MonthwiseDelayState();
@@ -38,7 +38,7 @@ class _MonthwiseDelayState extends State<MonthwiseDelay> {
       appBar: AppBar(
         title: Text(
           "Monthwise Delay(>14 Days)",
-          style: theme.textTheme.headline6,
+          style: theme.textTheme.titleLarge,
           textAlign: TextAlign.left,
         ),
         automaticallyImplyLeading: false,
@@ -101,7 +101,7 @@ class _MonthwiseDelayState extends State<MonthwiseDelay> {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: MonthwiseDelay(),
   ));
 }
