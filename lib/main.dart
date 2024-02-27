@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//if localization error then run flutter gen-l10n
 
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
